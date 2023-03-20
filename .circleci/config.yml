@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           name: "Say License"
-          command: "echo ${{Unity.UNITY_LICENSE}}"
+          command: "echo $Unity_UNITY_LICENSE"
 workflows:
   say-hello-workflow:
     jobs:
