@@ -21,7 +21,7 @@ workflows:
           project-path: .
           build-target: StandaloneLinux64
           compress: true
-          context: unity
+          context: Unity
 
       # Windows IL2CPP
       - unity/build:
@@ -38,4 +38,4 @@ workflows:
           project-path: .
           build-target: StandaloneWindows64
           compress: true
-          context: unity
+          context: Unity
