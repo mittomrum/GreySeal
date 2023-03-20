@@ -6,3 +6,7 @@ jobs:
       - image: my_docker_image
     steps:
       - run: echo ${{Unity.UNITY_ENCODED_LICENSE}}
+workflows:
+  my_workflow:
+    jobs:
+      - my_job
