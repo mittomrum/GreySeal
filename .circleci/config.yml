@@ -6,36 +6,34 @@ orbs:
 workflows:
   build-unity-project:
     jobs:
-      # Linux IL2CPP
+           # WebGL
       - unity/build:
-          name: 'build-linux64-il2cpp'
-          step-name: 'Build StandaloneLinux64'
+          name: 'build-webgl'
+          step-name: 'Build WebGL'
           unity-license-var-name: 'UNITY_ENCODED_LICENSE'
           unity-username-var-name: 'UNITY_USERNAME'
           unity-password-var-name: 'UNITY_PASSWORD'
           executor:
             name: 'unity/ubuntu'
-            target_platform: 'linux-il2cpp'
+            target_platform: 'webgl'
             editor_version: '2020.3.46f1'
             resource_class: 'large'
-          project-path: .
-          build-target: StandaloneLinux64
-          compress: true
-          context: Unity
-
-      # Windows IL2CPP
+          project-path: '.'
+          build-target: 'WebGL'
+          compress: false
+          context: unity
+          # Windows Mono
       - unity/build:
-          name: 'build-Windows64-il2cpp'
-          step-name: 'Build StandaloneWindows64 il2cpp'
+          name: 'build-Windows64-mono'
+          step-name: 'Build StandaloneWindows64'
           unity-license-var-name: 'UNITY_ENCODED_LICENSE'
           unity-username-var-name: 'UNITY_USERNAME'
           unity-password-var-name: 'UNITY_PASSWORD'
           executor:
-            name: 'unity/windows-2019'
-            size: 'large'
-            editor_version: '2020.3.46f1'
-            target_platform: 'windows-il2cpp'
+            name: 'unity/ubuntu'
+            target_platform: 'windows-mono'
+            editor_version: '2021.3.2f1'
+            resource_class: 'large'
           project-path: .
-          build-target: StandaloneWindows64
-          compress: true
-          context: Unity
+          build-target: 'StandaloneWindows64'
+          context: unity
