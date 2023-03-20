@@ -1,23 +1,24 @@
 version: 2.1
 
-orbs:
-  unity: game-ci/unity@1.4
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  say-hello:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World! ${UNITY_PASSWORD}"
 
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  build-unity-project:
+  say-hello-workflow:
     jobs:
-      # WebGL
-      - unity/build:
-          name: 'build-webgl'
-          step-name: 'Build WebGL'
-          unity-serial-var-name: 'UNITY_LICENSE_CONTENT'
-          unity-username-var-name: 'UNITY_USERNAME'
-          unity-password-var-name: 'UNITY_PASSWORD'
-          executor:
-            name: 'unity/ubuntu'
-            target_platform: 'webgl'
-            editor_version: '2021.3.1f1'
-            resource_class: 'large'
-          build-target: 'WebGL'
-          compress: false
-          context: Unity
+      - say-hello
