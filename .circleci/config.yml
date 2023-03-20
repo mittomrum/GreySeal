@@ -16,7 +16,7 @@ workflows:
           executor:
             name: 'unity/ubuntu'
             target_platform: 'linux-il2cpp'
-            editor_version: '2021.3.1f1'
+            editor_version: '2020.3.46f1'
             resource_class: 'large'
           project-path: .
           build-target: StandaloneLinux64
@@ -33,7 +33,7 @@ workflows:
           executor:
             name: 'unity/windows-2019'
             size: 'large'
-            editor_version: '2021.3.2f1'
+            editor_version: '2020.3.46f1'
             target_platform: 'windows-il2cpp'
           project-path: .
           build-target: StandaloneWindows64
