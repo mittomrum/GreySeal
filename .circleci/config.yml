@@ -18,7 +18,6 @@ workflows:
             target_platform: 'webgl'
             editor_version: '2021.3.1f1'
             resource_class: 'large'
-          project-path: '.'
           build-target: 'WebGL'
           compress: false
-          context: unity
+          context: Unity
