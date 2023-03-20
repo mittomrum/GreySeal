@@ -21,7 +21,7 @@ workflows:
           project-path: '.'
           build-target: 'WebGL'
           compress: false
-          context: unity
+          context: Unity
           # Windows Mono
       - unity/build:
           name: 'build-Windows64-mono'
@@ -36,4 +36,4 @@ workflows:
             resource_class: 'large'
           project-path: .
           build-target: 'StandaloneWindows64'
-          context: unity
+          context: Unity
