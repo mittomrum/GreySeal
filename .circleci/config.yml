@@ -13,8 +13,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "$UNITY_PASSWORD"
-          command:  printenv ${UNITY_PASSWORD}
+          name: "pass"
+          command:  echo $UNITY_PASSWORD
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
